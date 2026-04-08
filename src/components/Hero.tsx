@@ -50,7 +50,7 @@ export default function Hero() {
 
         <div className="flex items-center gap-4">
           <a
-            href="/CV.pdf"
+            href="/fedjabogataj-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-white/90 transition-colors duration-200"
