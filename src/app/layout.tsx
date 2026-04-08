@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name — Portfolio",
-  description: "Personal portfolio and website",
+  title: "Fedja Bogataj — Full-stack Developer & Data Science Student",
+  description: "Full-stack developer and data science student based in Vienna. I build web applications and data-driven systems.",
 };
 
 export default function RootLayout({
