@@ -3,7 +3,6 @@
 import Iridescence from './Iridescence';
 import BlurText from './BlurText';
 import ShinyText from './ShinyText';
-import LiquidEther from './LiquidEther';
 
 export default function Hero() {
   return (
@@ -51,10 +50,12 @@ export default function Hero() {
 
         <div className="flex items-center gap-4">
           <a
-            href="#projects"
+            href="/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-white text-black px-6 py-3 text-sm font-medium hover:bg-white/90 transition-colors duration-200"
           >
-            View my work
+            My CV
           </a>
           <a
             href="#contact"

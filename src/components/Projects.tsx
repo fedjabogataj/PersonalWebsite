@@ -1,25 +1,7 @@
 'use client';
 
 import GradientText from './GradientText';
-
-const PROJECTS = [
-  {
-    number: '01',
-    title: 'Deep Reinforcement Learning for Market Prediction',
-    description:
-      'Trained a deep RL agent to predict and act on financial market data, applying advanced reinforcement learning techniques to time-series forecasting.',
-    tags: ['Python', 'Reinforcement Learning', 'Deep Learning'],
-    href: '#',
-  },
-  {
-    number: '02',
-    title: 'Notepilot',
-    description:
-      'An AI-powered notetaking app that helps users capture, organise, and retrieve information using RAG and LLM-based summarisation.',
-    tags: ['Next.js', 'RAG', 'ChromaDB', 'TypeScript'],
-    href: '#',
-  },
-];
+import { PROJECTS } from '@/lib/projects';
 
 export default function Projects() {
   return (
@@ -44,7 +26,7 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <a
               key={project.number}
-              href={project.href}
+              href={`/projects/${project.slug}`}
               className="group flex flex-col gap-4 rounded-2xl p-7 bg-white/[0.02] border border-white/8 transition-all duration-300 hover:border-[#9d7ce8]/60 hover:shadow-[0_0_28px_6px_rgba(157,124,232,0.2)]"
             >
               <div className="flex items-start justify-between gap-4">
@@ -54,7 +36,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p className="text-white/65 text-base leading-relaxed">
-                    {project.description}
+                    {project.summary}
                   </p>
                 </div>
               </div>

@@ -32,14 +32,14 @@ const EDUCATION = [
     school: 'Technical University of Vienna',
     period: 'Mar 2025 — present',
     description:
-      'Focused on the Machine Learning & Statistics and Big Data & High-Performance Computing tracks. Topics include advanced regression, ML, statistical simulation, recommender systems, parallel computing, GPU architectures, and HPC.',
+      'My studies are focused on the Machine Learning and Statistics and Big Data and High-Performance Computing tracks, covering topics such as advanced regression and classification methods, machine learning, statistical simulation, recommender systems, parallel and data-intensive computing, advanced database systems, GPU architectures, and high-performance computing. This combination equips me with both the theoretical foundations and the practical engineering skills to design, train, and deploy data-driven systems at scale.',
   },
   {
     degree: 'BSc Computer Science',
     school: 'University of Ljubljana',
     period: '2021 — 2024',
     description:
-      'Covered Computer Architecture, Databases, and programming in C and Java, with a focus on Machine Learning and Computer Vision.',
+      'My studies included topics such as Computer Architecture, Databases and programming in both C and Java, with a focus on Machine Learning and Computer Vision.',
   },
 ];
 
@@ -49,7 +49,7 @@ const EXTRACURRICULAR = [
     org: 'Board of European Students of Technology Vienna',
     period: 'Dec 2025 — present',
     description:
-      'Full member of BEST Vienna. Logistics responsible for beWANTED 2026 and Summer Course 2026 — two international student events organised across Europe.',
+      'I joined BEST Vienna in March 2025, and became a Full member in December 2025. I was Logistics and Fund-raising responsible for beWANTED 2026 a career fair aimed at students at technical universities. I am also the logistics responsible for the BEST Summer Course 2026 in Vienna, a 10-day international event with 40+ participants from all over Europe, where I coordinate the logistics of the event and manage a team of volunteers to ensure everything runs smoothly.',
   },
 ];
 

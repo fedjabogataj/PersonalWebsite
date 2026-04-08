@@ -2,7 +2,7 @@
 
 const SOCIALS = [
   { label: 'GitHub', href: 'https://github.com/fedjabogataj' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/fedjabogataj' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/fedja-bogataj-71415b30a' },
 ];
 
 const SPINNING_TEXT = "Let's Talk • Let's Talk • Let's Talk • ";

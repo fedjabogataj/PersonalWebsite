@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About', href: '/#about' },
+  { label: 'Projects', href: '/#projects' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export default function Navbar() {
@@ -39,7 +39,7 @@ export default function Navbar() {
         className="flex items-center gap-8"
       >
         <a
-          href="#"
+          href="/"
           className="text-white font-semibold tracking-tight"
           style={{ fontFamily: 'Clash Display, sans-serif' }}
         >
