@@ -39,6 +39,9 @@ export default function Projects() {
                     {project.summary}
                   </p>
                 </div>
+                <svg width="16" height="16" viewBox="0 0 12 12" fill="none" className="text-white/20 shrink-0 mt-1 group-hover:text-white/50 transition-colors duration-300">
+                  <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
