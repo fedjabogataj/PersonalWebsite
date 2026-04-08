@@ -45,7 +45,7 @@ const EDUCATION = [
 
 const EXTRACURRICULAR = [
   {
-    role: 'Logistics Responsible',
+    role: 'Full-member of BEST Vienna',
     org: 'Board of European Students of Technology Vienna',
     period: 'Dec 2025 — present',
     description:
