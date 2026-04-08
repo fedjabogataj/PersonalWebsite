@@ -26,52 +26,43 @@ export default function Projects() {
     <section id="projects" className="bg-black text-white py-32 px-6 md:px-12 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <div>
+          <div className="w-full text-center">
             <GradientText
-              colors={['#3A1C71', '#D76D77', '#FFAF7B', '#3A1C71']}
+              colors={['#6b4fc8', '#9d7ce8', '#c4a8f0', '#6b4fc8']}
               animationSpeed={6}
-              className="text-xs tracking-[0.3em] uppercase mb-4 font-mono"
+              className="text-sm tracking-[0.3em] uppercase mb-8 font-mono"
             >
               Selected Work
             </GradientText>
-            <h2 className="text-4xl md:text-5xl font-semibold text-white leading-snug">
+            <h2 className="text-4xl md:text-5xl font-semibold text-white leading-snug text-center">
               Things I&apos;ve built.
             </h2>
           </div>
-          <a
-            href="https://github.com/fedjabogataj"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-white/40 hover:text-white transition-colors duration-200 flex items-center gap-2"
-          >
-            All projects
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
         </div>
 
-        <div className="flex flex-col divide-y divide-white/5">
+        <div className="flex flex-col gap-4">
           {PROJECTS.map((project) => (
             <a
               key={project.number}
               href={project.href}
-              className="group grid md:grid-cols-[3rem_1fr_auto] items-start gap-6 py-10 hover:opacity-80 transition-opacity duration-200"
+              className="group flex flex-col gap-4 rounded-2xl p-7 bg-white/[0.02] border border-white/8 transition-all duration-300 hover:border-[#9d7ce8]/60 hover:shadow-[0_0_28px_6px_rgba(157,124,232,0.2)]"
             >
-              <span className="text-white/15 text-xs font-mono pt-1">{project.number}</span>
-              <div>
-                <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-white/80 transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-white/35 text-sm leading-relaxed max-w-lg">
-                  {project.description}
-                </p>
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex-1">
+                  <span className="text-white/25 text-xs font-mono mb-3 block">{project.number}</span>
+                  <h3 className="text-white text-xl font-semibold mb-2 group-hover:text-white/80 transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-white/65 text-base leading-relaxed">
+                    {project.description}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-wrap gap-2 md:justify-end pt-1">
+              <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-white/25 border border-white/8 rounded-full px-3 py-1"
+                    className="text-xs text-white/40 border border-white/10 rounded-full px-3 py-1"
                   >
                     {tag}
                   </span>

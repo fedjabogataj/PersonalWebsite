@@ -6,6 +6,7 @@ const SOCIALS = [
 ];
 
 const SPINNING_TEXT = "Let's Talk • Let's Talk • Let's Talk • ";
+// color scheme: iridescence steel blue #809acc
 
 export default function Contact() {
   return (

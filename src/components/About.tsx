@@ -29,99 +29,147 @@ const EXPERIENCE = [
 const EDUCATION = [
   {
     degree: 'MSc Data Science',
-    school: 'TU Vienna',
+    school: 'Technical University of Vienna',
     period: 'Mar 2025 — present',
-    description: 'ML & Statistics + Big Data & High-Performance Computing tracks.',
+    description:
+      'Focused on the Machine Learning & Statistics and Big Data & High-Performance Computing tracks. Topics include advanced regression, ML, statistical simulation, recommender systems, parallel computing, GPU architectures, and HPC.',
   },
   {
     degree: 'BSc Computer Science',
     school: 'University of Ljubljana',
     period: '2021 — 2024',
-    description: 'Focus on Machine Learning and Computer Vision.',
+    description:
+      'Covered Computer Architecture, Databases, and programming in C and Java, with a focus on Machine Learning and Computer Vision.',
   },
 ];
+
+const EXTRACURRICULAR = [
+  {
+    role: 'Logistics Responsible',
+    org: 'Board of European Students of Technology Vienna',
+    period: 'Dec 2025 — present',
+    description:
+      'Full member of BEST Vienna. Logistics responsible for beWANTED 2026 and Summer Course 2026 — two international student events organised across Europe.',
+  },
+];
+
+function SectionLabel({ children }: { children: string }) {
+  return (
+    <GradientText
+      colors={['#6b4fc8', '#9d7ce8', '#c4a8f0', '#6b4fc8']}
+      animationSpeed={6}
+      className="text-sm tracking-[0.3em] uppercase mb-8 font-mono"
+    >
+      {children}
+    </GradientText>
+  );
+}
+
+function Card({ left, right, description }: {
+  left: React.ReactNode;
+  right: string;
+  description: string;
+}) {
+  return (
+    <div className="flex flex-col gap-2 rounded-2xl p-7 bg-white/[0.02] border border-white/8 transition-all duration-300 hover:border-[#9d7ce8]/60 hover:shadow-[0_0_28px_6px_rgba(157,124,232,0.2)]">
+      <div className="flex items-start justify-between gap-4 mb-1">
+        {left}
+        <span className="text-white/40 text-sm font-mono shrink-0">{right}</span>
+      </div>
+      <p className="text-white/65 text-base leading-relaxed">{description}</p>
+    </div>
+  );
+}
 
 export default function About() {
   return (
     <section id="about" className="bg-black text-white py-32 px-6 md:px-12">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="mb-20">
-          <GradientText
-            colors={['#3A1C71', '#D76D77', '#FFAF7B', '#3A1C71']}
-            animationSpeed={6}
-            className="text-xs tracking-[0.3em] uppercase mb-6 font-mono"
-          >
-            About Me
-          </GradientText>
-          <p className="text-4xl md:text-5xl font-semibold text-white leading-snug max-w-3xl">
-            I turn data and ideas into{' '}
-            <span className="text-white/35">products people actually use.</span>
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto flex flex-col gap-24">
 
-        {/* Bio + Experience */}
-        <div className="grid md:grid-cols-[1fr_1.4fr] gap-16 mb-20">
-          {/* Bio */}
-          <div>
-            <p className="text-white/50 text-base leading-relaxed mb-6">
-              I&apos;m a full-stack developer and data science student based in Vienna, currently
-              pursuing my Master&apos;s at TU Vienna. I enjoy working across the entire stack —
-              from architecting backends to crafting clean interfaces.
-            </p>
-            <p className="text-white/50 text-base leading-relaxed mb-6">
-              My ML focus covers computer vision, RAG systems, and reinforcement learning. Outside
-              of tech I&apos;m involved with the Board of European Students of Technology Vienna,
-              where I help organise events across Europe.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-2 text-xs text-white/30 font-mono">
-              <span>🇸🇮 Slovenian</span>
-              <span>🇬🇧 English C1</span>
-              <span>🇩🇪 German B1</span>
-            </div>
-          </div>
-
-          {/* Experience cards */}
-          <div className="flex flex-col gap-3">
-            {EXPERIENCE.map((exp, i) => (
-              <div
-                key={i}
-                className="flex flex-col gap-1 border border-white/5 rounded-2xl p-6 bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-200"
-              >
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <div>
-                    <p className="text-white font-medium text-sm">{exp.role}</p>
-                    <p className="text-white/35 text-xs mt-0.5">{exp.company}</p>
-                  </div>
-                  <span className="text-white/20 text-xs font-mono shrink-0">{exp.period}</span>
-                </div>
-                <p className="text-white/35 text-sm leading-relaxed">{exp.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Education */}
+        {/* 1 — About Me */}
         <div>
-          <p className="text-white/20 text-xs tracking-[0.3em] uppercase mb-6 font-mono">Education</p>
-          <div className="grid md:grid-cols-2 gap-3">
-            {EDUCATION.map((edu, i) => (
-              <div
+          <SectionLabel>About Me</SectionLabel>
+          <p className="text-4xl md:text-5xl font-semibold text-white leading-snug max-w-3xl mb-10">
+            I turn data and ideas into{' '}
+            <span className="text-white/55">products people actually use.</span>
+          </p>
+          <p className="text-white/75 text-lg leading-relaxed mb-5 max-w-2xl">
+            I&apos;m a full-stack developer and data science student based in Vienna, currently
+            pursuing my Master&apos;s at TU Vienna. I enjoy working across the entire stack —
+            from architecting backends to crafting clean interfaces.
+          </p>
+          <p className="text-white/75 text-lg leading-relaxed max-w-2xl mb-8">
+            My ML focus covers computer vision, RAG systems, and reinforcement learning. Outside
+            of tech I&apos;m involved with the Board of European Students of Technology, where I
+            help organise international events across Europe.
+          </p>
+          <div className="flex flex-wrap gap-4 text-sm text-white/30 font-mono">
+            <span>🇸🇮 Slovenian</span>
+            <span>🇬🇧 English C1</span>
+            <span>🇩🇪 German B1</span>
+          </div>
+        </div>
+
+        {/* 2 — Work Experience */}
+        <div>
+          <SectionLabel>Work Experience</SectionLabel>
+          <div className="flex flex-col gap-4">
+            {EXPERIENCE.map((exp, i) => (
+              <Card
                 key={i}
-                className="flex flex-col gap-1 border border-white/5 rounded-2xl p-6 bg-white/[0.02] hover:bg-white/[0.05] transition-colors duration-200"
-              >
-                <div className="flex items-start justify-between gap-4 mb-1">
+                left={
                   <div>
-                    <p className="text-white font-medium text-sm">{edu.degree}</p>
-                    <p className="text-white/35 text-xs mt-0.5">{edu.school}</p>
+                    <p className="text-white font-medium text-base">{exp.role}</p>
+                    <p className="text-white/65 text-sm mt-0.5">{exp.company}</p>
                   </div>
-                  <span className="text-white/20 text-xs font-mono shrink-0">{edu.period}</span>
-                </div>
-                <p className="text-white/35 text-sm leading-relaxed">{edu.description}</p>
-              </div>
+                }
+                right={exp.period}
+                description={exp.description}
+              />
             ))}
           </div>
         </div>
+
+        {/* 3 — Education */}
+        <div>
+          <SectionLabel>Education</SectionLabel>
+          <div className="flex flex-col gap-4">
+            {EDUCATION.map((edu, i) => (
+              <Card
+                key={i}
+                left={
+                  <div>
+                    <p className="text-white font-medium text-base">{edu.degree}</p>
+                    <p className="text-white/65 text-sm mt-0.5">{edu.school}</p>
+                  </div>
+                }
+                right={edu.period}
+                description={edu.description}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* 4 — Extracurricular */}
+        <div>
+          <SectionLabel>Extracurricular Activities</SectionLabel>
+          <div className="flex flex-col gap-4">
+            {EXTRACURRICULAR.map((item, i) => (
+              <Card
+                key={i}
+                left={
+                  <div>
+                    <p className="text-white font-medium text-base">{item.role}</p>
+                    <p className="text-white/65 text-sm mt-0.5">{item.org}</p>
+                  </div>
+                }
+                right={item.period}
+                description={item.description}
+              />
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
