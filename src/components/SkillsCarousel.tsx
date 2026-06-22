@@ -6,6 +6,7 @@ const SKILLS = [
   'PostgreSQL', 'ChromaDB', 'Supabase',
   'Azure', 'Docker',
   'Computer Vision', 'RAG', 'Reinforcement Learning',
+  'SLURM', 'OpenMP', 'HPC',
 ];
 
 const ITEMS = [...SKILLS, ...SKILLS];
