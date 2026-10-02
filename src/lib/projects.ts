@@ -80,23 +80,6 @@ export const PROJECTS: Project[] = [
       },
     ],
   },
-  {
-    slug: 'process-logic-transformer',
-    number: '04',
-    title: 'Small Transformers for Semiconductor Process Logic',
-    summary:
-      'A hackathon project (Zero One Hack 2026, Industrial AI track, with Infineon) training a family-conditioned GPT-style transformer to learn semiconductor fab process-sequence logic from synthetic data. Token embeddings were initialised from a BGE sentence encoder, and the final model was selected via a 9-run L9 Taguchi sweep over learning rate, depth, and regularisation, scored against the organizers\' own evaluation harness.',
-    description:
-      'Built with teammate Luka Premuš for the Industrial AI track of the Zero One Hack 2026 hackathon, mentored by Infineon. Semiconductor fab lots follow a strict recipe of ~110-150 ordered steps drawn from a vocabulary of about 120 step types, under hard ordering rules and three product families (MOSFET, IGBT, IC) that share a backbone but differ in prep blocks and cycle counts. The track asked whether a model can genuinely learn that ordering grammar rather than just local token frequencies, and whether it generalises to a held-out fourth product family. The approach treats one process step as one token and models sequences autoregressively with a GPT-style decoder conditioned on product family, with token embeddings initialised from BAAI/bge-base-en-v1.5 by encoding each step\'s name, description, and parameters — so an unseen step from the OOD family lands in the same semantic space. The final model was chosen from a balanced 9-run L9 Taguchi sweep over learning rate, depth, dropout, and weight decay, re-ranked using the organizers\' own official scorer rather than an internal metric, and was the Pareto winner on next-step prediction and sequence completion while tying on anomaly detection F1.',
-    tags: ['Python', 'PyTorch', 'Transformers', 'NLP', 'Hackathon'],
-    links: [
-      {
-        label: 'GitHub',
-        href: 'https://github.com/fedjabogataj/Zero-one-hack-2026',
-        external: true,
-      },
-    ],
-  },
 ];
 
 export function getProject(slug: string): Project | undefined {
