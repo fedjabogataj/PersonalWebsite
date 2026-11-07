@@ -80,6 +80,40 @@ export const PROJECTS: Project[] = [
       },
     ],
   },
+  {
+    slug: 'forecast-combination',
+    number: '04',
+    title: 'Combining 15 stock-return forecasts',
+    summary:
+      'A quant challenge: combine 15 anonymised models that forecast 10-day stock returns into one daily long-only allocation. Walk-forward diagnostics found two hidden signals — the difference of two near-identical models and an interaction where one model\'s skill flips sign with another — which lifted an IC-weighted combination from 0.039 to 0.087 out of sample, roughly doubling the excess return of the best single model.',
+    description:
+      'Given daily forecasts from 15 anonymised models for a universe of around 500 stocks, the task was to combine them into one long-only daily allocation for an unseen test period, using only information available at the time.\n\nI first judged each model on its own with a cross-sectional rank IC and an honest t-statistic computed on non-overlapping days. Some models carried a stable signal, one was reliably wrong (useful with a negative weight), several were noise, and one had no stock-picking skill but predicted the direction of the market. Every combination method was then compared walk-forward, refitting every 63 days with an 11-day purge so no future returns leaked into a fit.\n\nGradient boosting beat every linear method, and permutation importance showed why: it relied on four inputs that look useless individually. Two of them were near-copies (correlation 0.98) whose difference cancels a shared noise term and leaves a strong signal (IC 0.054, t ≈ 12). The other two formed an interaction: one model forecasts well where the other is high and equally badly where it is low, so their product is a strong signal (IC 0.057, t ≈ 13). With both made explicit inputs, a simple IC-weighted linear combination matched Ridge and beat gradient boosting while staying easy to explain.\n\nThe final portfolio holds the top 30 stocks, weighted by the combined score, and moves to 50% cash when the market-timing model predicts a negative market. In validation it earned more than twice the excess return of the best single model, with a Sharpe ratio of 2.47 against 1.53 and a smaller drawdown.',
+    tags: ['Python', 'Quant Finance', 'Forecast Combination', 'Walk-Forward Validation', 'pandas'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/fedjabogataj/ErsteChallenge',
+        external: true,
+      },
+    ],
+  },
+  {
+    slug: 'earnings-volatility',
+    number: '05',
+    title: 'Erste Group earnings volatility',
+    summary:
+      'An event study of how Erste Group\'s share-price volatility behaves around its quarterly results, benchmarked against the ATX. On the publication day volatility is about 2.8 times its normal level, and none of 1,000 random placebo date sets came close, which is a case for market makers widening spreads ahead of known results dates.',
+    description:
+      'Results dates are announced in advance, so if volatility reliably spikes around them, a market maker should widen quotes and spreads ahead of the event. This project tests whether that is true for Erste Group (EBS.VI), how quickly volatility returns to normal, and whether the effect is specific to Erste or shared by the Austrian ATX index.\n\nEvent dates are scraped from Erste\'s investor-relations financial calendar and snapped to the nearest trading day. For each of the 11 results dates since 2023, the study takes a window of 10 trading days either side, measures the root-mean-square of daily log returns across events for each relative day, and divides it by the same measure over all days outside any event window.\n\nOn the publication day Erste\'s volatility is about 2.8 times its baseline, while the ATX stays at its normal level on the same dates, so the effect is specific to the stock. A placebo test that drew 1,000 random sets of non-event days never produced a ratio that high. Volatility stays somewhat elevated for a few days afterwards and is back to normal within about five trading days.',
+    tags: ['Python', 'Event Study', 'Volatility', 'pandas', 'yfinance'],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/fedjabogataj/Erste-Earning-Volatility',
+        external: true,
+      },
+    ],
+  },
 ];
 
 export function getProject(slug: string): Project | undefined {
