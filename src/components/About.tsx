@@ -4,6 +4,13 @@ import GradientText from './GradientText';
 
 const EXPERIENCE = [
   {
+    role: 'Software & DevOps Engineer',
+    company: 'TU Wien — Christian Doppler Laboratory for Recommender Systems (CDL RecSys)',
+    period: 'Oct 2026 — present',
+    description:
+      'I develop and maintain an LLM-based conversational recommender system built together with industry partners. I work on API connections, data pipelines, and the integration and curation of data sources that ground the system, and I take care of system administration for its hosts, VMs, and services.',
+  },
+  {
     role: 'Full Stack Developer',
     company: 'SRC d.o.o.',
     period: 'Oct 2024 — Mar 2025',
